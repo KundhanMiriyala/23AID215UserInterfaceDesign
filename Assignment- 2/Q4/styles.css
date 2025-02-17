@@ -1,0 +1,14 @@
+/* Universal Selector */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styles */
+body {
+    background-color: lightyellow;
+}
+
+/* Paragraph Styles */
+p {
+    color: blue;
+}
