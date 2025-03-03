@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Flexbox Images</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .image-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: column;
+            }
+            
+            .image-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div class="image-container">
+        <div class="image-box">
+            <img src="what.png" alt="Image 1">
+        </div>
+        <div class="image-box">
+            <img src="C:\Users\chakr\OneDrive\Pictures\crome.gif" alt="Image 2">
+        </div>
+        <div class="image-box">
+            <img src="C:\Users\chakr\OneDrive\Pictures\infintecastle.gif" alt="Image 3">
+        </div>
+        <div class="image-box">
+            <img src="C:\Users\chakr\OneDrive\Pictures\wallphoto.jpg" alt="Image 4">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-rows: 100px 200px 100px;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .header {
+            grid-column: 1 / 4;
+            background-color: #ffcdd2;
+            border-bottom: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .landing-page {
+            grid-column: 1 / 4;
+            background-color: #ffcdd2;
+            border-bottom: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .about-us {
+            background-color: #ffcdd2;
+            border-right: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .vision {
+            background-color: #ffcdd2;
+            border-right: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .contact-us {
+            background-color: #ffcdd2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="landing-page">Landing Page</div>
+        <div class="about-us">About us</div>
+        <div class="vision">Vision</div>
+        <div class="contact-us">Contact us</div>
+    </div>
+</body>
+</html>

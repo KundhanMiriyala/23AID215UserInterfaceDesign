@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 20px auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+    /* For viewports 1500px and wider, set column widths to 30%, 40%, 30% */
+    @media (min-width: 1500px) {
+      th:nth-child(1), td:nth-child(1) { width: 30%; }
+      th:nth-child(2), td:nth-child(2) { width: 40%; }
+      th:nth-child(3), td:nth-child(3) { width: 30%; }
+    }
+    /* For viewports 600px and narrower, display table rows as blocks */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 15px;
+      }
+      td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #000;
+      }
+      td:before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      /* Label each cell */
+      td:nth-of-type(1):before { content: "First Name"; }
+      td:nth-of-type(2):before { content: "Last Name"; }
+      td:nth-of-type(3):before { content: "Age"; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nikhil</td>
+          <td>Sai</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>MS</td>
+          <td>Dhoni</td>
+          <td>43</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

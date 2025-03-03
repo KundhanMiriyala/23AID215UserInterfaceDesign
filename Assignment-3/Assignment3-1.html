@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iFrame Example</title>
+</head>
+<body>
+    <h1>iFrame Example</h1>
+    
+    <!-- Part I: Create an iframe with name "my_area" and insert picture -->
+    <iframe id="my_area" name="my_area" width="800" height="400" scrolling="yes" src="what.png"></iframe>
+    
+    <!-- Part II: Links that display content in the iframe -->
+    <h2>Resources</h2>
+    <ul>
+        <li><a href="https://www.amrita.edu" target="my_area">Amrita University</a></li>
+        <li><a href="https://www.w3schools.com" target="my_area">W3Schools</a></li>
+        <li><a href="https://www.mozilla.org" target="my_area">Mozilla</a></li>
+    </ul>
+    
+    <script>
+        // Script to handle links that cannot be displayed in iframe
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const iframe = document.getElementById('my_area');
+                
+                // Try to load in iframe first
+                try {
+                    iframe.src = this.href;
+                    e.preventDefault();
+                    
+                    // Check if the page loaded successfully in the iframe
+                    iframe.onload = function() {
+                        try {
+                            // This will throw an error if the page blocks iframe display
+                            const iframeContent = iframe.contentWindow.document;
+                        } catch (error) {
+                            // If error, open in new window
+                            window.open(link.href, '_blank');
+                        }
+                    };
+                } catch (error) {
+                    // If any error, open in new window
+                    window.open(link.href, '_blank');
+                }
+            });
+        });
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 Amrita Viswavidyapeetham. All rights reserved.</p>
+    </footer>
+</body>
+</html>
